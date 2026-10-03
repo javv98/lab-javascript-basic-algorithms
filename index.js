@@ -24,9 +24,9 @@ let newDriversName = ""
 for (let i = 0; i < hacker1.length; i++) {
     let char = hacker1[i]
     if (i !== hacker1.length - 1) {
-        newDriversName = newDriversName + char.toLocaleUpperCase() + " "
+        newDriversName = newDriversName + char.toUpperCase() + " "
     } else {
-        newDriversName = newDriversName + char.toLocaleUpperCase()
+        newDriversName = newDriversName + char.toUpperCase()
     }
 }
 
@@ -36,7 +36,7 @@ console.log(newDriversName)
 
 let newNavigatorsName = ""
 
-for (i = hacker2.length - 1; i >= 0; i--) {
+for (let i = hacker2.length - 1; i >= 0; i--) {
     let char = hacker2[i]
     newNavigatorsName = newNavigatorsName + char;
 }
@@ -47,8 +47,8 @@ console.log(newNavigatorsName)
 
 let abc = "abcdefghijklmnopqrstuvwxyz"
 let foundIt = 0
-let hacker1LowerCase = hacker1.toLowerCase
-let hacker2LowerCase = hacker2.toLowerCase
+let hacker1LowerCase = hacker1.toLowerCase()
+let hacker2LowerCase = hacker2.toLowerCase()
 let nombreLargo = ""
 if (hacker1.length > hacker2.length) {
     nombreLargo = hacker1
@@ -88,8 +88,15 @@ let longText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam r
 Etiam sodales tristique tortor ac consequat. Proin laoreet sed justo ac condimentum. Nullam nibh nibh, faucibus a ornare at, pretium et neque. Sed malesuada aliquet aliquam. Sed pellentesque leo ac augue molestie dapibus. Nulla volutpat risus ac sem rhoncus, ac fringilla metus malesuada. Mauris pellentesque, urna eget pulvinar tincidunt, sapien dolor tempor purus, ut feugiat felis nulla non libero. Donec tristique maximus ligula quis aliquet. Donec condimentum sapien id commodo suscipit. Vestibulum est lacus, ullamcorper at consequat vel, pretium ut odio. Integer vel suscipit justo. Nam pretium sollicitudin aliquet. Etiam quam arcu, finibus sit amet euismod a, condimentum sed arcu. Nunc ornare sagittis aliquet.
 In facilisis tellus cursus tristique hendrerit. Integer sit amet ullamcorper augue, eu luctus quam. Donec at semper ipsum. Praesent gravida arcu sem, imperdiet finibus odio pharetra at. Morbi vel nulla dignissim, egestas ipsum at, hendrerit nisi. Pellentesque nec velit magna. Nullam ac risus id tortor posuere malesuada. Vivamus sed lacus vitae diam suscipit feugiat at at arcu. Praesent sed bibendum tellus. Vestibulum molestie neque feugiat dolor ultrices vehicula. Nullam bibendum tellus diam, sit amet venenatis enim vulputate sit amet. Nam at sagittis elit, ut luctus ante. Pellentesque sit amet feugiat massa. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.`
 
-let count = longText.length
-console.log(count)
+let countWords = 1 // Por la palabra del inicio
+
+for (let i = 0; i < longText.length; i++) {
+    if (longText[i] === " ") {
+        countWords++
+    }
+}
+
+console.log(countWords)
 
 let longTextLowerCase = longText.toLowerCase()
 let countEt = 0
@@ -123,4 +130,6 @@ for (let i = phraseToCheckNoSpecial.length - 1; i >= 0; i--) {
 
 if (phraseToCheckNoSpecial === phraseToCheckBackwards) {
     console.log("It's a palindrome!")
+} else {
+    console.log("It's not a palindrome!")
 }
